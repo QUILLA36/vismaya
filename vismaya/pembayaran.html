@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="pembayaran.css">
+</head>
+<body>
+    <div class="container">
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="dropdown">
+                <select>
+                    <option>Lorem ipsum - $45.55</option>
+                    <option>Lorem ipsum - $45.55</option>
+                    <option>Lorem ipsum - $45.55</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <select>
+                    <option>Lorem ipsum</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <select>
+                    <option>Lorem ipsum</option>
+                </select>
+            </div>
+            <div class="total">
+                <p>Total Amount</p>
+                <p>$45.55</p>
+            </div>
+        </div>
+
+        <div class="payment-details">
+            <h2>Payment Details</h2>
+            <p>Choose Payment</p>
+            <div class="dropdown">
+                <select id="payment-method">
+                    <option value="">Select Payment Method</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="bank-transfer">Transfer Bank</option>
+                    <option value="e-wallet">E-Wallet</option>
+                </select>
+            </div>
+
+            <div id="credit-card-options" class="payment-options" style="display:none;">
+                <h3>Credit Card Details</h3>
+                <label for="cc-number">Card Number</label>
+                <input type="text" id="cc-number" placeholder="1234 5678 9012 3456">
+                <label for="cc-expiry">Expiry Date</label>
+                <input type="text" id="cc-expiry" placeholder="MM/YY">
+                <label for="cc-cvc">CVC</label>
+                <input type="text" id="cc-cvc" placeholder="123">
+            </div>
+
+            <div id="bank-transfer-options" class="payment-options" style="display:none;">
+                <h3>Bank Transfer Details</h3>
+                <label for="bank-name">Bank Name</label>
+                <input type="text" id="bank-name" placeholder="Bank XYZ">
+                <label for="account-number">Account Number</label>
+                <input type="text" id="account-number" placeholder="123456789">
+            </div>
+
+            <div id="ewallet-options" class="payment-options" style="display:none;">
+                <h3>E-Wallet Details</h3>
+                <label for="ewallet-id">E-Wallet ID</label>
+                <input type="text" id="ewallet-id" placeholder="Your E-Wallet ID">
+            </div>
+
+            <button class="pay-button">Pay Order</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Griya. Batik Vismaya</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula hendrerit congue.</p>
+                <p>Copyright 2024, Griya Batik Vismaya. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <h2>Contact Info</h2>
+                <p>Address: Jl. Raya Lumut Utara, 576, Indonesia</p>
+                <p>Email: griyabatikvismaya@gmail.com</p>
+                <p>Telepon: +62 423-5365-1896</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function() {
+            document.querySelectorAll('.payment-options').forEach(option => option.style.display = 'none');
+            if (this.value === 'credit-card') {
+                document.getElementById('credit-card-options').style.display = 'block';
+            } else if (this.value === 'bank-transfer') {
+                document.getElementById('bank-transfer-options').style.display = 'block';
+            } else if (this.value === 'e-wallet') {
+                document.getElementById('ewallet-options').style.display = 'block';
+            }
+        });
+
+        document.getElementById('payment-method').addEventListener('change', function() {
+        document.querySelectorAll('.payment-options').forEach(option => option.style.display = 'none');
+        if (this.value === 'credit-card') {
+            document.getElementById('credit-card-options').style.display = 'block';
+        } else if (this.value === 'bank-transfer') {
+            document.getElementById('bank-transfer-options').style.display = 'block';
+        } else if (this.value === 'e-wallet') {
+            document.getElementById('ewallet-options').style.display = 'block';
+        }
+    });
+
+    // Aksi ketika tombol "Pay Order" diklik
+    document.querySelector('.pay-button').addEventListener('click', function() {
+        // Pindah ke halaman pelacakan, misalnya tracking.html
+        window.location.href = 'pelacakan.html';
+    });
+
+    </script>
+</body>
+</html>

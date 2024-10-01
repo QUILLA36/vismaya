@@ -1,0 +1,236 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #5338EC, #FF651A);
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 1rem; /* Smaller font size */
+    font-weight: bold;
+    color: white;
+    line-height: 1.2; /* Adjust line height for better spacing */
+    text-align: left; /* Align the logo text */
+    white-space: nowrap; /* Prevent breaking into more than 2 lines if not needed */
+}
+
+/* Create two lines for the logo */
+.navbar .logo::after {
+    white-space: pre; /* Keep it on a new line */
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Add spacing between menu items */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    font-weight: bold; /* Make text bold */
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid white;
+}
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+    background: linear-gradient(to right, #5338EC, #FF651A);
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+/* Cart Section */
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #f9f9f9;
+}
+
+.cart-container {
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #e3e3e3;
+}
+
+.voucher-container {
+    display: flex; /* Mengatur konten dalam satu baris */
+    align-items: center; /* Menyelaraskan vertikal */
+    margin-top: 20px; /* Jarak atas */
+}
+
+.voucher-input {
+    flex: 1; /* Mengisi ruang yang tersedia */
+    padding: 10px;
+    border: 2px solid #FF651A; /* Menggunakan warna yang sama dengan tombol */
+    border-radius: 5px;
+    margin-right: 10px; /* Jarak antara input dan tombol */
+    font-size: 1rem;
+}
+
+.voucher-input:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+    border-color: #e04e00; /* Warna border saat fokus */
+}
+
+.voucher-status {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: red; /* Default color */
+}
+
+.apply-button {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color: #FF651A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background-color: #e04e00;
+}
+
+/* Cart Summary */
+.cart-summary {
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.product-image {
+    width: 50px;
+}
+
+.cart-summary img {
+    margin-left: 30px;
+    height: 350px;
+    width: 350px;
+}
+
+.sale-image {
+    width: 450px; /* Ukuran gambar iklan */
+    margin-right: 20px; /* Spasi antara gambar dan ringkasan */
+}
+
+.summary-box {
+    margin-left: 400px;
+    width: 800px; /* Mengatur lebar kontainer ringkasan */
+    background-color: white;
+    padding: 15px; /* Mengurangi padding untuk ukuran lebih kecil */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-details p {
+    display: flex;
+    justify-content: space-between; /* Menempatkan label di kiri dan harga di kanan */
+    margin-bottom: 10px; /* Mengatur jarak antar item */
+    font-size: 1rem; /* Ukuran font untuk keterangan */
+}
+
+.summary-details p:last-child { /* Mengatur margin untuk total */
+    margin-top: 10px; /* Jarak untuk total */
+    font-weight: bold; /* Membuat total lebih menonjol */
+}
+
+
+.summary-box h2 {
+    margin-bottom: 10px;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #FF651A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 70px;
+}
+
+.checkout-button:hover {
+    background-color: #e04e00;
+}
+
+/* Footer */
+.footer {
+    background-color: #3b168c;
+    color: white;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+}
+
+.footer-left h2, .footer-right h3 {
+    margin-bottom: 15px;
+}
+
+.footer-left p, .footer-right p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}

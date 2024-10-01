@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom right, #673ab7, #ff5722);
+}
+
+.hero {
+    position: relative; /* Membantu dengan pseudo-elemen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    height: 550px;
+    overflow: hidden; /* Mencegah latar belakang hero meluas */
+}
+
+.hero-content{
+    margin-left: 75px;
+}
+
+.hero-content h1 {
+    line-height: 55px;
+}
+
+.hero::before {
+    content: ''; /* Membuat pseudo-elemen untuk latar belakang */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: url('gif.gif'); /* Ganti dengan URL gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Menempatkan gambar latar belakang di bawah konten hero */
+}
+
+.navbar {
+    position: sticky; /* Membuat navbar tetap di posisi saat scroll */
+    top: 0; /* Menempel di bagian atas viewport */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.5); /* Warna putih dengan transparansi */
+    backdrop-filter: blur(10px); /* Efek blur di belakang navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    z-index: 10; /* Agar navbar berada di atas gambar latar belakang hero */
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    position: relative; /* Pastikan kontainer navbar-menu relatif */
+}
+
+.navbar-menu a {
+    font-family: 'Poppins', sans-serif;
+    position: relative; /* Posisi relatif untuk pseudo-element ::before */
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block; /* Pastikan link adalah elemen blok inline */
+}
+
+.navbar-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0; /* Mulai dengan lebar 0 */
+    height: 3px;
+    background-color: #f7f7f7;
+    transition: width 0.2s; /* Transisi hanya pada lebar */
+}
+
+.navbar-menu a:hover::before,
+.navbar-menu a.active::before {
+    width: 100%; /* Lebar penuh saat hover atau aktif */
+}
+
+.navbar-auth button {
+    margin-left: 10px;
+    padding: 0px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-register {
+    background-color: rgba(255, 255, 255, 0.1); /* Warna putih dengan transparansi rendah untuk efek blur */
+    color: #08040f;
+    backdrop-filter: blur(5px); /* Efek blur pada latar belakang */
+    outline: 2px solid white; /* Stroke luar tipis warna putih */
+    border-radius: 25px; /* Membuat sudut melengkung */
+    padding: 10px 20px; /* Jarak dalam tombol */
+    cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
+    font-size: 14px; /* Ukuran font */
+    transition: all 0.3s ease; /* Animasi halus saat hover */
+}
+
+.btn-register:hover {
+    background-color: #fd7e57; /* Sedikit lebih terang saat hover */
+}
+
+
+.btn-login {
+    background-color: white;
+    color: #08040f;
+    outline: 2px solid #08040f;
+    border-radius: 50%; /* Mengubah border-radius menjadi 50% untuk bentuk lingkaran */
+    transition: all 0.3s ease;
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    display: flex; /* Menggunakan flex untuk pusatkan konten */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    padding: 0; /* Menghapus padding agar gambar dapat memenuhi tombol */
+    border: none; /* Menghapus border default */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+
+.btn-login img {
+    width: 80%; /* Menyesuaikan lebar gambar dalam tombol */
+    height: 80%; /* Menyesuaikan tinggi gambar dalam tombol */
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area */
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    max-width: 500px;
+}
+
+.hero p {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+.hero-image {
+    margin-top: -500px;
+    width: 85px;
+    height: 25px;
+    margin-right: 400px;
+}
+
+.history {
+    display: flex;
+    align-items: center;
+    padding: 170px;
+    background-color: white;
+}
+
+.history-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Atur posisi relatif untuk elemen child */
+}
+
+.history-content img {
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 30px;
+    position: relative; /* Agar berada di atas efek blur */
+    z-index: 0; /* Mengatur urutan tumpukan gambar di bawah efek blur */
+}
+
+.blurred-background {
+    position: absolute;
+    top: 250px; /* Atur posisi dari atas */
+    left: 100px; /* Mengatur posisi dari kiri untuk align */
+    width: 300px; /* Lebar sesuai dengan lebar gambar */
+    height: 60px; /* Tinggi blur, disesuaikan sesuai kebutuhan */
+    background-color: rgba(255, 140, 0, 0.932); /* Warna oranye dengan transparansi */
+    filter: blur(15px); /* Efek blur */
+    border-radius: 20px; /* Sesuaikan dengan border-radius gambar */
+    z-index: 1; /* Menempatkan blur di atas gambar */
+    pointer-events: none; /* Mencegah elemen blur dari interaksi */
+}
+
+.history-text {
+    position: relative;
+}
+
+.history-text h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #ff5722;
+    font-size: 28px;
+    margin-left: 150px;
+}
+
+.history-text p {
+    margin-left: 150px; /* Jarak dari sisi kiri */
+    font-family: 'Poppins', sans-serif;
+    width: 500px; /* Lebar elemen agar teks dapat membungkus */
+    line-height: 1.6; /* Tinggi baris untuk meningkatkan keterbacaan */
+    white-space: normal; /* Memungkinkan teks membungkus pada batas elemen */
+    word-wrap: break-word; /* Memastikan kata-kata panjang dipotong jika diperlukan */
+}
+
+.btn-see-more {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk transformasi dan bayangan */
+}
+
+.btn-see-more:hover {
+    transform: scale(1.1); /* Membesarkan tombol 10% */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek timbul */
+}
+
+
+.craftsman {
+    background: linear-gradient(to bottom right, #673ab7, #ff5722);
+    padding: 75px;
+    text-align: center;
+    color: white;
+}
+
+.craftsman h2 {
+    margin-top: -10px;
+    margin-left: 58px;
+}
+
+.craftsman-list {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.craftsman-item {
+    position: relative;
+    display: inline-block;
+}
+
+.craftsman-item img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.craftsman-item:hover img {
+    transform: scale(1.1); /* Membesarkan gambar sedikit saat hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Memberikan efek bayangan untuk kesan timbul */
+}
+
+
+.products {
+    padding: 150px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.products h2 {
+    margin-bottom: 50px; /* Mengurangi jarak di bawah heading */
+    margin-top: -100px; /* Menambahkan margin negatif di atas heading untuk menggesernya ke atas */
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Menyesuaikan item jika ukuran layar lebih kecil */
+    margin-top: 20px;
+}
+
+.product-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-item {
+    width: 200px; /* Lebar yang lebih besar untuk menyesuaikan gambar dan teks */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+    max-width: 100%; /* Menyesuaikan gambar dengan lebar item */
+    height: auto; /* Menjaga rasio gambar */
+    border-radius: 10px; /* Radius sudut untuk gambar */
+    margin-bottom: 10px; /* Jarak antara gambar dan teks */
+}
+
+.product-rating {
+    font-size: 18px; /* Ukuran bintang */
+    color: gold; /* Warna bintang */
+    margin-top: 5px;
+    margin-bottom: 2px; /* Jarak antara bintang dan nama produk */
+}
+
+.product-item p {
+    font-family: 'Poppins', sans-serif;
+    margin: 5px 0; /* Jarak antara elemen teks */
+    font-size: 16px; /* Ukuran font yang sesuai */
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Membesarkan item produk sedikit saat hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
+}
+
+
+.cooperation {
+    padding: 100px;
+    background-color: #9c9c9c;
+    text-align: center;
+}
+
+.cooperation-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.cooperation-item {
+    width: 60px;
+    height: 60px;
+    background-color: #ff5722;
+    border-radius: 50%;
+}
+
+.cooperation {
+    padding: 100px;
+    background-color: #9c9c9c;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.footer {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #673ab7;
+    color: white;
+}
+
+.footer-left, .footer-right {
+    width: 40%;
+}
+
+.footer-left h3, .footer-right h3 {
+    margin-bottom: 20px;
+}

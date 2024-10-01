@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Pastikan html dan body memiliki tinggi penuh */
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    height: 100vh; /* Membuat hero memenuhi tinggi viewport */
+    overflow: hidden;
+    background: linear-gradient(to right, #5338EC, #FF651A); /* Tambahkan gradient jika diperlukan */
+}
+
+.hero::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Mengatur tinggi penuh untuk pseudo-elemen latar belakang */
+    background-image: url('gif.gif'); /* Ganti dengan URL gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Membuat gambar latar belakang melekat saat scroll */
+    z-index: -1; 
+}
+
+.navbar {
+    position: sticky; /* Membuat navbar tetap di posisi saat scroll */
+    top: 0; /* Menempel di bagian atas viewport */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 20px 0;
+    background: rgba(255, 255, 255, 0.5); /* Warna putih dengan transparansi */
+    backdrop-filter: blur(10px); /* Efek blur di belakang navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    z-index: 10;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 14px;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.navbar-menu {
+    position: relative; /* Pastikan kontainer navbar-menu relatif */
+}
+
+.navbar-menu a {
+    position: relative; /* Posisi relatif untuk pseudo-element ::before */
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block; /* Pastikan link adalah elemen blok inline */
+}
+
+.navbar-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0; /* Mulai dengan lebar 0 */
+    height: 3px;
+    background-color: white;
+    transition: width 0.2s; /* Transisi hanya pada lebar */
+}
+
+.navbar-menu a:hover::before,
+.navbar-menu a.active::before {
+    width: 100%; /* Lebar penuh saat hover atau aktif */
+}
+
+.navbar-auth button {
+    margin-left: 10px;
+    padding: 0px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    margin-top: 1px;
+    background-color: white;
+    color: #08040f;
+    outline: 2px solid #08040f;
+    border-radius: 50%; /* Mengubah border-radius menjadi 50% untuk bentuk lingkaran */
+    transition: all 0.3s ease;
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    display: flex; /* Menggunakan flex untuk pusatkan konten */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    padding: 0; /* Menghapus padding agar gambar dapat memenuhi tombol */
+    border: none; /* Menghapus border default */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+
+.btn-login img {
+    width: 80%; /* Menyesuaikan lebar gambar dalam tombol */
+    height: 80%; /* Menyesuaikan tinggi gambar dalam tombol */
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area */
+}
+
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    color: white;
+    height: 100vh; /* Mengisi layar penuh */
+    overflow: hidden; /* Mencegah latar belakang meluas */
+    margin-top: -2px; /* Agar benar-benar menempel di atas */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Mengisi seluruh viewport */
+    background-image: url('gif.gif'); /* Ganti dengan URL gambar latar belakang GIF */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Membuat background tetap saat scroll */
+    z-index: -1; /* Menempatkan gambar latar belakang di bawah konten hero */
+}
+
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.circle-graphic {
+    margin-top: -400px;
+    width: 5px;
+    height: 5px;
+    margin-right: 400px;
+}
+
+/* About Section */
+.about-section {
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-image {
+    margin-left: 78px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-left: 248px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-left: 248px;
+    padding: 15px 2px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: -20px 0; /* Ubah dari -50px menjadi 20px atau 0 */
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #541073 0%, #9E1FD9 34%, #9E1FD9 60%);
+}
+
+.timeline {
+    position: relative; /* Membuat timeline sebagai elemen induk untuk positioning */
+    min-height: 200px; /* Pastikan ada cukup ruang untuk item di bagian bawah */
+}
+
+/* Untuk menyesuaikan posisi setiap item pada beads */
+.timeline-item {
+    position: absolute;
+    left: 50%; /* Agar item tetap di dalam container timeline */
+    transform: translateX(-50%); /* Posisi di tengah */
+}
+
+/* Posisi setiap item sesuai dengan beads */
+.timeline-item:nth-child(1) {
+    top: 10%; /* Sesuai dengan bead pertama */
+}
+
+.timeline-item:nth-child(2) {
+    top: 30%; /* Sesuai dengan bead kedua */
+}
+
+.timeline-item:nth-child(3) {
+    top: 50%; /* Sesuai dengan bead ketiga */
+}
+
+.timeline-item:nth-child(4) {
+    top: 70%; /* Sesuai dengan bead keempat */
+}
+
+
+.timeline-item2 {
+    position: absolute;
+    bottom: 0; /* Meletakkan elemen di bagian bawah */
+    right: 0;  /* Meletakkan elemen di pojok kanan */
+    margin: 20px; /* Opsional: Memberi sedikit jarak dari tepi */
+}
+
+.timeline-item2 img {
+    width: 200px; /* Atur ukuran gambar sesuai kebutuhan */
+    height: auto; /* Menyesuaikan tinggi otomatis */
+    border-radius: 10px; /* Menambah estetika dengan sudut melengkung */
+}
+
+/* Line yang lebih kecil */
+/* Line yang lebih kecil dan animasi */
+/* Modifikasi Line untuk memastikan posisinya di tengah container */
+.line {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 1px); /* Posisikan di tengah horizontal */
+    top: 50%; /* Posisikan di tengah vertikal */
+    transform: translateY(-50%); /* Pastikan berada di tengah dengan transform */
+    width: 3px; /* Lebar garis */
+    height: 60%; /* Sesuaikan tinggi garis agar tidak terlalu panjang */
+    background-color: #fff;
+    animation: grow-line 2s ease forwards; /* Animasi garis turun */
+}
+
+/* Keyframes untuk animasi line */
+@keyframes grow-line {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 90%; /* Sesuaikan tinggi akhir garis */
+    }
+}
+
+/* Modifikasi bead untuk hanya memiliki 4 */
+.line:before,
+.line::after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.line:after {
+    bottom: 0;
+}
+
+/* Tambahkan untuk styling step lebih kecil */
+.section {
+    display: flex;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 600ms ease;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    padding: 1rem;
+    align-items: center;
+    min-height: 20px;
+    font-size: 0.9rem; /* Ukuran font lebih kecil untuk menghemat ruang */
+    color: #fff;
+}
+
+.section:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.content1 h2 {
+    margin-left: 400px;
+    color: white;
+}
+
+.section1 p {
+    margin-left: 400px;
+    font-size: 0.8rem; /* Ukuran font lebih kecil */
+    line-height: 1.4;  /* Tinggi baris lebih rapat */
+    max-width: 250px;  /* Batas lebar agar teks terpotong dan jadi lebih pendek */
+    color: white;
+}
+
+/* Ukuran paragraf di dalam setiap step lebih kecil */
+.section p {
+    font-size: 0.8rem; /* Ukuran font lebih kecil */
+    line-height: 1.4;  /* Tinggi baris lebih rapat */
+    max-width: 250px;  /* Batas lebar agar teks terpotong dan jadi lebih pendek */
+    margin: 10px 0;    /* Kurangi margin antar paragraf */
+}
+
+.content {
+    width: calc(50% - 2rem);
+}
+
+/* Class untuk animasi muncul */
+.show-me {
+    transform: none;
+    opacity: 1;
+}
+
+/* Menyesuaikan posisi beads agar sejalan dengan steps */
+.bead {
+    position: absolute;
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mengatur posisi beads untuk masing-masing step */
+.bead:nth-child(1) {
+    top: 10%;
+}
+
+.bead:nth-child(2) {
+    top: 30%;
+}
+
+.bead:nth-child(3) {
+    top: 50%;
+}
+
+.bead:nth-child(4) {
+    top: 70%;
+}
+
+/* Menghilangkan bead setelah 4 */
+.bead:nth-child(n+5) {
+    display: none;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 10px 0 70px;
+}
+
+.h2 {
+    margin-top: 200px;
+    margin-left: 200px;
+    margin-bottom: -70px;
+}
+.choose-us-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.choose-us-image {
+    width: 500px;
+    margin-top: 50px;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column; /* Susun elemen secara vertikal */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item img {
+    width: 300px; /* Atur ukuran gambar sesuai keinginan */
+    margin-top: -98px;
+    margin-bottom: 50px;
+    margin-left: 130px; /* Jarak antara gambar dan elemen berikutnya (jika ada) */
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #3b168c;
+    color: white;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+}
+
+.footer-left h2, .footer-right h3 {
+    margin-bottom: 15px;
+}
+
+.footer-left p, .footer-right p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}

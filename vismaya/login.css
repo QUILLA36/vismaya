@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.container {
+    display: flex;
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure positioning context for absolute children */
+}
+
+.welcome-section {
+    background: linear-gradient(to bottom right, #673ab7, #ff5722);
+    color: white;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For stacking context */
+}
+
+.welcome-section h1 {
+    font-size: 30px;
+    width: 200px;
+    line-height: 1.5;
+    margin-top: -90px;
+    margin-right: 700px;
+}
+
+.form-section {
+    background-color: white;
+    width: 430px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute; /* Overlaps welcome-section */
+    top: 0;
+    right: 0;
+    height: 100%; /* Ensure it takes up full height of container */
+    z-index: 1; /* Ensure it stays on top of welcome-section */
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-header h2 {
+    font-size: 20px;
+}
+
+.have-account {
+    font-size: 14px;
+    color: #9b9b9b; /* Warna default teks */
+    text-decoration: none; /* Hilangkan underline awal */
+    transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Transisi untuk efek yang lebih halus */
+}
+
+.have-account:hover {
+    color: orange; /* Warna saat hover */
+    text-decoration: underline; /* Tampilkan underline */
+    text-decoration-color: orange; /* Warna underline menjadi orange */
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.google-signin,
+.facebook-signin {
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.google-signin img,
+.facebook-signin img {
+    max-height: 16px;
+    width: auto;
+}
+
+.google-signin {
+    background-color: white;
+    border: 2px solid #ff5722;
+    color: #ff5722;
+}
+
+.facebook-signin {
+    background-color: white;
+    border: 2px solid #673ab7;
+    color: #673ab7;
+}
+
+.or-text {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* General styles for all input fields */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: calc(100% - 22px);
+}
+
+/* Container for password field and toggle button */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Styles specific to password input */
+input[type="password"] {
+    padding-right: 40px; /* Space for the icon */
+}
+
+/* Password toggle button */
+.password-toggle {
+    position: absolute;
+    right: 32px; /* Align with the right edge of the input */
+    top: 40%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Icon inside the toggle button */
+.password-toggle img {
+    width: 15px; 
+    height: 15px;
+}
+
+.forgot-password {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 20px; /* Spacing before the submit button */
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #ff5722; /* Optional: Change color on hover */
+}
+
+.create-account {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    margin-left: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 70%;
+}

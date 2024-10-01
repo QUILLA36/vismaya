@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F8F8F8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #673AB7, #FF5722);
+    color: white;
+}
+
+.navbar .logo h2 {
+    font-size: 14px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin: 0 20px; /* Tambahkan jarak horizontal antara item */
+}
+
+.navbar .nav-links a {
+    color: white; /* Warna teks putih */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    font-size: 18px;
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    padding: 10px 15px; /* Menambahkan padding untuk ruang klik yang lebih besar */
+    position: relative; /* Menambahkan posisi relatif untuk elemen */
+}
+
+.navbar .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Garis bawah akan berada di bawah teks */
+    height: 2px; /* Tinggi garis bawah */
+    background-color: white; /* Warna garis bawah */
+    transform: scaleX(0); /* Mengatur skala garis bawah menjadi 0 (tidak terlihat) */
+    transition: transform 0.3s; /* Transisi untuk efek hover */
+}
+
+.navbar .nav-links a:hover::after {
+    transform: scaleX(1); /* Mengubah skala garis bawah menjadi 1 saat dihover */
+}
+
+
+.navbar .auth-buttons button {
+    margin-left: 15px;
+    padding: 10px 15px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.navbar .auth-buttons button:hover {
+    background-color: lightgray;
+}
+
+/* Tracking Section */
+.tracking-container {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.tracking-card {
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: white;
+    width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.order-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Styling sebelumnya */
+
+.tracking-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Garis penghubung antar step */
+.tracking-steps::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background-color: #A032F5;
+    z-index: 0;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Agar lingkaran berada di atas garis */
+}
+
+.circle {
+    margin-left: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: #A032F5;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.step p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.step span {
+    font-size: 12px;
+    color: #666;
+}
+
+
+.details {
+    margin-top: 20px;
+    color: #333;
+}
+
+.details p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.completed .circle {
+    background-color: #A032F5;
+}
+
+.order-summary {
+    margin-top: 20px;
+    margin-left: 780px;
+    width: 300px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.order-summary h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #D3D3D3;
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+td {
+    border-bottom: 1px solid #D3D3D3;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td:nth-child(2) {
+    text-align: right;
+}
+
+/* Footer */
+footer {
+    background-color: #4B0082;
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    width: 40%;
+}
+
+.footer-left h2, .footer-right h2 {
+    margin-bottom: 15px;
+}
+
+.footer-left p, .footer-right p {
+    margin-bottom: 10px;
+}
